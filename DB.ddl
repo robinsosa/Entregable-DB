@@ -348,7 +348,14 @@ INSERT INTO ECOM_CATEGORIA VALUES (seq_ecom_categoria.Nextval, 'Gadgets y Wearab
 INSERT INTO ECOM_CATEGORIA VALUES (seq_ecom_categoria.Nextval, 'Componentes de PC', 'Procesadores, tarjetas madre, memorias RAM, fuentes y tarjetas gráficas.');
 INSERT INTO ECOM_CATEGORIA VALUES (seq_ecom_categoria.Nextval, 'Software y Licencias', 'Sistemas operativos, suites de oficina y programas de seguridad.');
 
--- 3 TABLA DE PRODUCTOS
+-- 3 TABLA DE PROVEEDORES
+INSERT INTO ECOM_PROVEEDOR VALUES (seq_ecom_proveedor.Nextval, 'TecnoImport S.A.', 'Carlos Rojas', '014567890', 'ventas@tecnoimport.com', 'Av. Industrial 123, Lima');
+INSERT INTO ECOM_PROVEEDOR VALUES (seq_ecom_proveedor.Nextval, 'ElectroWorld', 'María Torres', '014567891', 'contacto@electroworld.com', 'Jr. Electronics 456, Arequipa');
+INSERT INTO ECOM_PROVEEDOR VALUES (seq_ecom_proveedor.Nextval, 'Distribuidora Tech', 'Roberto Silva', '014567892', 'info@techdist.com', 'Av. Tecnología 789, Trujillo');
+INSERT INTO ECOM_PROVEEDOR VALUES (seq_ecom_proveedor.Nextval, 'Gadgets & More', 'Laura Mendoza', '014567893', 'ventas@gadgetsmore.com', 'Calle Innovación 321, Piura');
+INSERT INTO ECOM_PROVEEDOR VALUES (seq_ecom_proveedor.Nextval, 'Digital Solutions', 'Javier López', '014567894', 'contact@digitalsolutions.com', 'Av. Digital 654, Chiclayo');
+
+-- 4 TABLA DE PRODUCTOS
 INSERT INTO ECOM_PRODUCTO VALUES (seq_ecom_producto.Nextval, 1, 1, 'Audífonos Bluetooth', 'Audífonos inalámbricos con cancelación de ruido', 150.00, 'Sony');
 INSERT INTO ECOM_PRODUCTO VALUES (seq_ecom_producto.Nextval, 2, 2, 'iPhone 15 Pro', 'Smartphone Apple 256GB', 4200.00, 'Apple');
 INSERT INTO ECOM_PRODUCTO VALUES (seq_ecom_producto.Nextval, 3, 3, 'Laptop Gaming', 'Laptop i7, 16GB RAM, RTX 4060', 3800.00, 'ASUS');
@@ -360,7 +367,15 @@ INSERT INTO ECOM_PRODUCTO VALUES (seq_ecom_producto.Nextval, 8, 3, 'Smartwatch D
 INSERT INTO ECOM_PRODUCTO VALUES (seq_ecom_producto.Nextval, 9, 4, 'Tarjeta Gráfica RTX 4070', 'GPU de alto rendimiento para gaming y diseño 3D', 5200.00, 'NVIDIA');
 INSERT INTO ECOM_PRODUCTO VALUES (seq_ecom_producto.Nextval, 10, 5, 'Memoria RAM 32GB DDR5', 'Módulo de memoria de alto rendimiento para PCs y laptops', 650.00, 'Corsair');
 
--- 4 TABLA DE PEDIDOS
+-- 5 TABLA DE MÉTODOS DE PAGO
+INSERT INTO ECOM_METODO_PAGO VALUES (seq_ecom_metodo_pago.Nextval, 'Tarjeta de Crédito', 'Pago con tarjeta de crédito Visa/Mastercard');
+INSERT INTO ECOM_METODO_PAGO VALUES (seq_ecom_metodo_pago.Nextval, 'Tarjeta de Débito', 'Pago con tarjeta de débito');
+INSERT INTO ECOM_METODO_PAGO VALUES (seq_ecom_metodo_pago.Nextval, 'Transferencia Bancaria', 'Transferencia interbancaria');
+INSERT INTO ECOM_METODO_PAGO VALUES (seq_ecom_metodo_pago.Nextval, 'Yape', 'Pago mediante Yape');
+INSERT INTO ECOM_METODO_PAGO VALUES (seq_ecom_metodo_pago.Nextval, 'Plin', 'Pago mediante Plin');
+INSERT INTO ECOM_METODO_PAGO VALUES (seq_ecom_metodo_pago.Nextval, 'Efectivo', 'Pago en efectivo al momento de la entrega');
+
+-- 6 TABLA DE PEDIDOS
 INSERT INTO ECOM_PEDIDO VALUES (seq_ecom_pedido.Nextval, 1, 1, DATE '2024-01-15', 99.9, 'Proceso...');
 INSERT INTO ECOM_PEDIDO VALUES (seq_ecom_pedido.Nextval, 2, 2, DATE '2024-01-16', 4200.0, 'Entregado');
 INSERT INTO ECOM_PEDIDO VALUES (seq_ecom_pedido.Nextval, 3, 3, DATE '2024-01-17', 300.0, 'En camino');
@@ -372,10 +387,10 @@ INSERT INTO ECOM_PEDIDO VALUES (seq_ecom_pedido.Nextval, 8, 2, DATE '2024-01-22'
 INSERT INTO ECOM_PEDIDO VALUES (seq_ecom_pedido.Nextval, 9, 3, DATE '2024-01-23', 45.0, 'Proceso...');
 INSERT INTO ECOM_PEDIDO VALUES (seq_ecom_pedido.Nextval, 10, 1, DATE '2024-01-24', 250.0, 'Entregado');
 
--- 5 TABLA DE DETALLES DE PEDIDO
+-- 7 TABLA DE DETALLES DE PEDIDO
 INSERT INTO ECOM_DETAL_PEDI VALUES (seq_ecom_detal_pedi.Nextval, 1, 1, 1, 99.9, 99.9);
 INSERT INTO ECOM_DETAL_PEDI VALUES (seq_ecom_detal_pedi.Nextval, 2, 2, 1, 4200.0, 4200.0);
-INSERT INTO ECOM_DETAL_PEDI VALUES (seq_ecom_detal_pedi.Nextval, 3, 1, 2, 150.0, 300.0);
+INSERT INTO ECOM_DETAL_PEDI VALUES (seq_ecom_detal_pedi.Nextval, 3, 4, 2, 150.0, 300.0);
 INSERT INTO ECOM_DETAL_PEDI VALUES (seq_ecom_detal_pedi.Nextval, 4, 3, 1, 3800.0, 3800.0);
 INSERT INTO ECOM_DETAL_PEDI VALUES (seq_ecom_detal_pedi.Nextval, 5, 5, 1, 120.0, 120.0);
 INSERT INTO ECOM_DETAL_PEDI VALUES (seq_ecom_detal_pedi.Nextval, 6, 7, 1, 180.0, 180.0);
@@ -383,8 +398,8 @@ INSERT INTO ECOM_DETAL_PEDI VALUES (seq_ecom_detal_pedi.Nextval, 7, 8, 1, 220.0,
 INSERT INTO ECOM_DETAL_PEDI VALUES (seq_ecom_detal_pedi.Nextval, 8, 9, 1, 350.0, 350.0);
 INSERT INTO ECOM_DETAL_PEDI VALUES (seq_ecom_detal_pedi.Nextval, 9, 10, 1, 45.0, 45.0);
 INSERT INTO ECOM_DETAL_PEDI VALUES (seq_ecom_detal_pedi.Nextval, 10, 6, 1, 250.0, 250.0);
-
--- 6 TABLA DE INVENTARIO
+SELECT *FROM ECOM_DETAL_PEDI;
+-- 8 TABLA DE INVENTARIO
 INSERT INTO ECOM_INVENTARIO VALUES (seq_ecom_inventario.Nextval, 1, 50, 10);
 INSERT INTO ECOM_INVENTARIO VALUES (seq_ecom_inventario.Nextval, 2, 25, 5);
 INSERT INTO ECOM_INVENTARIO VALUES (seq_ecom_inventario.Nextval, 3, 15, 3);
@@ -396,27 +411,12 @@ INSERT INTO ECOM_INVENTARIO VALUES (seq_ecom_inventario.Nextval, 8, 20, 5);
 INSERT INTO ECOM_INVENTARIO VALUES (seq_ecom_inventario.Nextval, 9, 35, 10);
 INSERT INTO ECOM_INVENTARIO VALUES (seq_ecom_inventario.Nextval, 10, 80, 25);
 
--- 7 TABLA DE PROVEEDORES
-INSERT INTO ECOM_PROVEEDOR VALUES (seq_ecom_proveedor.Nextval, 'TecnoImport S.A.', 'Carlos Rojas', '014567890', 'ventas@tecnoimport.com', 'Av. Industrial 123, Lima');
-INSERT INTO ECOM_PROVEEDOR VALUES (seq_ecom_proveedor.Nextval, 'ElectroWorld', 'María Torres', '014567891', 'contacto@electroworld.com', 'Jr. Electronics 456, Arequipa');
-INSERT INTO ECOM_PROVEEDOR VALUES (seq_ecom_proveedor.Nextval, 'Distribuidora Tech', 'Roberto Silva', '014567892', 'info@techdist.com', 'Av. Tecnología 789, Trujillo');
-INSERT INTO ECOM_PROVEEDOR VALUES (seq_ecom_proveedor.Nextval, 'Gadgets & More', 'Laura Mendoza', '014567893', 'ventas@gadgetsmore.com', 'Calle Innovación 321, Piura');
-INSERT INTO ECOM_PROVEEDOR VALUES (seq_ecom_proveedor.Nextval, 'Digital Solutions', 'Javier López', '014567894', 'contact@digitalsolutions.com', 'Av. Digital 654, Chiclayo');
-
--- 8 TABLA DE EMPLEADOS
+-- 9- TABLA DE EMPLEADOS
 INSERT INTO ECOM_EMPLEADO VALUES (seq_ecom_empleado.Nextval, 'Ana', 'García', 'Gerente de Ventas', 3500.00, DATE '2022-03-15', 'Ventas');
 INSERT INTO ECOM_EMPLEADO VALUES (seq_ecom_empleado.Nextval, 'Luis', 'Martínez', 'Asistente de Almacén', 1800.00, DATE '2023-01-20', 'Almacén');
 INSERT INTO ECOM_EMPLEADO VALUES (seq_ecom_empleado.Nextval, 'Carmen', 'Díaz', 'Especialista en Soporte', 2800.00, DATE '2022-08-10', 'Soporte');
 INSERT INTO ECOM_EMPLEADO VALUES (seq_ecom_empleado.Nextval, 'Pedro', 'Castillo', 'Coordinador de Envíos', 2200.00, DATE '2023-03-05', 'Logística');
 INSERT INTO ECOM_EMPLEADO VALUES (seq_ecom_empleado.Nextval, 'Sofía', 'Quiroga', 'Analista de Marketing', 2600.00, DATE '2022-11-12', 'Marketing');
-
--- 9 TABLA DE MÉTODOS DE PAGO
-INSERT INTO ECOM_METODO_PAGO VALUES (seq_ecom_metodo_pago.Nextval, 'Tarjeta de Crédito', 'Pago con tarjeta de crédito Visa/Mastercard');
-INSERT INTO ECOM_METODO_PAGO VALUES (seq_ecom_metodo_pago.Nextval, 'Tarjeta de Débito', 'Pago con tarjeta de débito');
-INSERT INTO ECOM_METODO_PAGO VALUES (seq_ecom_metodo_pago.Nextval, 'Transferencia Bancaria', 'Transferencia interbancaria');
-INSERT INTO ECOM_METODO_PAGO VALUES (seq_ecom_metodo_pago.Nextval, 'Yape', 'Pago mediante Yape');
-INSERT INTO ECOM_METODO_PAGO VALUES (seq_ecom_metodo_pago.Nextval, 'Plin', 'Pago mediante Plin');
-INSERT INTO ECOM_METODO_PAGO VALUES (seq_ecom_metodo_pago.Nextval, 'Efectivo', 'Pago en efectivo al momento de la entrega');
 
 -- 10 TABLA DE FACTURAS
 INSERT INTO ECOM_FACTURA VALUES (seq_ecom_factura.Nextval, 1, DATE '2024-01-15', 84.66, 15.24, 99.9, 'Emitida');
@@ -453,7 +453,7 @@ INSERT INTO ECOM_RESENA VALUES (seq_ecom_resena.Nextval, 7, 8, 5, 'El smartwatch
 INSERT INTO ECOM_RESENA VALUES (seq_ecom_resena.Nextval, 8, 9, 5, 'Tarjeta gráfica increíble, corre todos los juegos en ultra', DATE '2024-01-30');
 INSERT INTO ECOM_RESENA VALUES (seq_ecom_resena.Nextval, 9, 10, 4, 'Buena memoria RAM, mejora notable el rendimiento', DATE '2024-01-31');
 INSERT INTO ECOM_RESENA VALUES (seq_ecom_resena.Nextval, 10, 6, 5, 'El parlante tiene un sonido excelente y es muy portátil', DATE '2024-02-01');
-
+select * from ECOM_RESENA
 -- CONSULTAS QUE PIDEN
 -- CONSULTA 1: PRODUCTOS MAS VENVIDOS 
 SELECT 
@@ -700,4 +700,3 @@ EXCEPTION
         DBMS_OUTPUT.PUT_LINE('Error en facturación: ' || SQLERRM);
 END;
 /
-
